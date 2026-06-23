@@ -1,4 +1,5 @@
 import type { NextFunction, Request, RequestHandler, Response } from 'express';
+import type { RegisterInput } from '../schemas/auth.schema.js';
 
 type LoginResponse = {
   access_token: string;
@@ -6,7 +7,9 @@ type LoginResponse = {
 };
 
 export const authController = {
-  async register(req: Request, res: Response) {},
+  async register(req: Request, res: Response) {
+    const input = req.body as RegisterInput;
+  },
 
   login: async (
     req: Request,
